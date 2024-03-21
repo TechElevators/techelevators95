@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Awesome Website</title>
+    <style>
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        /* Header styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+.tag   {
+          text-align: center;
+       }
+        .search-bar {
+            margin-right: 20px;
+        }
+        /* Navigation bar styles */
+        nav {
+            background-color: none;
+            color: blue;
+            padding: 10px 0;
+        }
+        nav a{
+               text-decoration: none;
+               font-size: 20px;
+               color: #2874A6;
+               font-weight:bold;
+             }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+        }
+        nav ul li {
+            margin-right: 20px;
+        }
+        /* Slideshow styles */
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            overflow: hidden;
+        }
+        .slide {
+            display: none;
+            width: 100%;
+        }
+        .slide img {
+            width:100%;
+            height: 350px;
+        }
+        /* News box styles */
+        .news-box {
+            float: left;
+            width: 30%;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        /* Footer styles */
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+<body background="clouds.jpg">
+    <div class="container">
+        <header >
+            <div class="logo"><img src="logo.png" width="90px" height="90px">
+</div>
+<div class="tag"><h1>TECH ELEVATORS</h1></div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+            </div>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Services</a></li>
+            </ul>
+        </nav>
+        <div class="slideshow-container">
+            <div class="slide">
+                <img src="image1.jfif">
+            </div>
+            <div class="slide">
+                <img src="image2.jfif">
+            </div>
+            <div class="slide">
+                <img src="image2.jfif">
+            </div>
+           <div class="slide">
+                <img src="image3.jpg">
+            </div>
+           <div class="slide">
+                <img src="image4.jfif">
+            </div>
+   
+            <button class="prev">Previous</button>
+            <button class="next">Next</button>
+        </div>
+        <div class="news-box">
+            <h2>News</h2>
+            <p>Stay updated with the latest news!this news are acurate and fair.the is no biasness</p>
+        </div>
+    </div>
+    <footer>
+        Terms and Conditions © 2024 My Awesome Website
+    </footer>
+    <script>
+        // JavaScript for automatic slideshow
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function showSlide(n) {
+            slides.forEach(slide => slide.style.display = 'none');
+            slideIndex = (n + slides.length) % slides.length;
+            slides[slideIndex].style.display = 'block';
+        }
+
+        function nextSlide() {
+            showSlide(slideIndex + 1);
+        }
+
+        function prevSlide() {
+            showSlide(slideIndex - 1);
+        }
+
+        // Automatically advance slides every 3 seconds
+        setInterval(nextSlide,3000);
+
+        // Attach event listeners to buttons
+        document.querySelector('.prev').addEventListener('click', prevSlide);
+        document.querySelector('.next').addEventListener('click', nextSlide);
+    </script>
+</body>
+</html>
